@@ -1,0 +1,13 @@
+#!/bin/sh
+target=/etc/cron.hourly/nico3d_feed
+bundle install
+cat <<EOT|sudo tee $target
+#!/bin/sh
+`which ruby` /var/www/nico3d_feed/nico3d_feed.rb
+EOT
+sudo chmod +x $target
+sudo ln -s /var/www/nico3d_feed/nico3d_feed.conf /etc/apache2/conf-enabled
+sudo service apache2 restart
+echo '初期データ生成...'
+$target
+
