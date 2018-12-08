@@ -1,0 +1,6 @@
+Rails:
+  Enabled: true
+
+Rails/TimeZone:
+  Enabled: false
+
