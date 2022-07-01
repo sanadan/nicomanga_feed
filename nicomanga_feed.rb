@@ -20,7 +20,7 @@ def content(data, item)
   author = data.at('.mg_author').text
   thumbnail = data.at('.comic_icon img')['src']
   content = "<a href=\"#{item['link']}\">"
-  content += "<img src=\"#{thumbnail}\" border=\"0\">"
+  content += "<img src=\"#{thumbnail}\" border=\"0\" align=\"top\">"
   content += "#{item['title']}</a> / #{author}"
   content
 end
